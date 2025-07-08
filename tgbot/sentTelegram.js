@@ -2,7 +2,7 @@ import config from "/-config"
 const conf = await config('mail')
 
 const sentTelegram = async (html, client) => {
-
+    if (!conf.telegram) console.log('Отправка в телеграмм не настроена, нужно добавить реквизиты botToken и chatID в .mail.json секция telegram')
     if (client) {
         html += 
 `
